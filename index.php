@@ -1,9 +1,9 @@
-<?php include 'includes/header.inc.php'; ?>
 
-<form onSubmit="user.registerUser($(this).find('#login').val(), $(this).find('#password').val());" action="#">
-    <label for="login">Login</label><input id="login" /><br />
-    <label for="password">Password</label><input id="password" type="password" />
-    <input type="submit" />
-</form>
+<?php
+include 'conf.php';
+include __INC__.'header.inc.php';
+?>
 
-<?php include 'includes/footer.inc.php';
+<?php include __INC__.'character/character.inc.php'?>
+
+<?php include __INC__.'footer.inc.php'; ?>

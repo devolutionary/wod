@@ -1,5 +1,2 @@
-var ajaxPath = 'ajax/';
-
-$(document).ready(function() {
-
-});
+var basePath = "//" + window.location.host + window.location.pathname,
+    ajaxPath = basePath + 'ajax/';

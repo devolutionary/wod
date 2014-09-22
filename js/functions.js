@@ -1,22 +1,18 @@
 function generateRandomString(length, mode) {
+    var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
+        str = "";
 
-    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghijklmnopqrstuvwxyz";
-    var string_length = 32;
-
-    if (typeof length == "integer")
-        string_length = length;
-
+    if (typeof length == "undefined" || typeof length != "integer")
+        length = 32;
     if (typeof mode != "undefined") {
-        if (mode == "numeric")
+        if (mode == "alpha")
+            chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        else if (mode == "numeric")
             chars = "0123456789";
-        else if (mode == "alpha")
-            chars = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghijklmnopqrstuvwxyz";
     }
 
-    var str = "";
-
-    while (string_length--)
-        str += chars.substr(Math.floor(Math.random() * chars.length), 1);
+    while (length-- > 0)
+        str += chars[parseInt(Math.random() * chars.length)];
 
     return str;
 }
