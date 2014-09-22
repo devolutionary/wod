@@ -1,0 +1,13 @@
+body {
+    background: black;
+}
+body, * {
+    color: white;
+    font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Metamorphous", sans-serif;
+    font-weight: normal;
+    font-variant: small-caps;
+}
