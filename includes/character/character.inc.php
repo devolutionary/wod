@@ -174,7 +174,333 @@
         </div>
     </div>
 
+    <div class="cs-section">
+        <h2>Abilities</h2>
+        <div class="cs-block ability-block">
+            <h3>Talents</h3>
+            <div class="row" data-field="alertness">
+                <label>Alertness</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="athletics">
+                <label>Athletics</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="awareness">
+                <label>Awareness</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="brawl">
+                <label>Brawl</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="dodge">
+                <label>Dodge</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="empathy">
+                <label>Empathy</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="expression">
+                <label>Expression</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="intimidation">
+                <label>Intimidation</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="intuition">
+                <label>Intuition</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="leadership">
+                <label>Leadership</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="streetwise">
+                <label>Streetwise</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="subterfuge">
+                <label>Subterfuge</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+        </div>
+
+        <div class="cs-block ability-block">
+            <h3>Skills</h3>
+            <div class="row" data-field="animalken">
+                <label>Animal Ken</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="crafts">
+                <label>Crafts</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="demolitions">
+                <label>Demolitions</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="drive">
+                <label>Drive</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="etiquette">
+                <label>Etiquette</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="firearms">
+                <label>Firearms</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="melee">
+                <label>Melee</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="performance">
+                <label>Performance</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="security">
+                <label>Security</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="stealth">
+                <label>Stealth</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="survival">
+                <label>Survival</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="technology">
+                <label>Technology</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+        </div>
+
+        <div class="cs-block ability-block">
+            <h3>Knowledges</h3>
+            <div class="row" data-field="academics">
+                <label>Academics</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="computer">
+                <label>Computer</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="finance">
+                <label>Finance</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="investigation">
+                <label>Investigation</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="law">
+                <label>Law</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="linguistics">
+                <label>Linguistics</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="medicine">
+                <label>Medicine</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="occult">
+                <label>Occult</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="politics">
+                <label>Politics</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="religion">
+                <label>Religion</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="research">
+                <label>Research</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+            <div class="row" data-field="science">
+                <label>Science</label>
+                <input class="specialisation" />
+                <div class="dots" data-min="0" data-max="5"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cs-section">
+        <h2>Advantages</h2>
+        <div class="cs-block background-block">
+            <h3>Backgrounds</h3>
+        </div>
+        <div class="cs-block lore-block">
+            <h3>Lores</h3>
+        </div>
+        <div class="cs-block virtue-block">
+            <h3>Virtues</h3>
+            <div class="row" data-field="conscience">
+                <label>Conscience</label>
+                <div class="dots" data-min="1" data-max="5"></div>
+            </div>
+            <div class="row spacer"></div>
+            <div class="row" data-field="conviction">
+                <label>Conviction</label>
+                <div class="dots" data-min="1" data-max="5"></div>
+            </div>
+            <div class="row spacer"></div>
+            <div class="row" data-field="courage">
+                <label>Courage</label>
+                <div class="dots" data-min="1" data-max="5"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cs-section">
+        <div class="cs-block apocalyptic-block">
+            <h3>Apocalyptic Form</h3>
+            <h4>Low Torment Abilities</h4>
+            <div class="row">
+                <input class="apocalypticability" />
+                <input class="apocalypticcost" maxlength="1" />
+            </div>
+            <div class="row">
+                <input class="apocalypticability" />
+                <input class="apocalypticcost" maxlength="1" />
+            </div>
+            <div class="row">
+                <input class="apocalypticability" />
+                <input class="apocalypticcost" maxlength="1" />
+            </div>
+            <div class="row">
+                <input class="apocalypticability" />
+                <input class="apocalypticcost" maxlength="1" />
+            </div>
+            <h4>High Torment Abilities</h4>
+            <div class="row">
+                <input class="apocalypticability" />
+                <input class="apocalypticcost" maxlength="1" />
+            </div>
+            <div class="row">
+                <input class="apocalypticability" />
+                <input class="apocalypticcost" maxlength="1" />
+            </div>
+            <div class="row">
+                <input class="apocalypticability" />
+                <input class="apocalypticcost" maxlength="1" />
+            </div>
+            <div class="row">
+                <input class="apocalypticability" />
+                <input class="apocalypticcost" maxlength="1" />
+            </div>
+        </div>
+        <div class="cs-block">
+            <h3>Faith</h3>
+            <div class="row" data-field="faith">
+                <div class="dots center" data-min="3" data-max="10"></div>
+            </div>
+            <div class="row" data-field="faithtemporary">
+                <div class="dots center" data-min="0" data-max="10" data-type="block"></div>
+            </div>
+            <h3>Torment</h3>
+            <div class="row" data-field="torment">
+                <h5>Permanent</h5>
+                <div class="dots center" data-min="3" data-max="10"></div>
+            </div>
+            <div class="row" data-field="tormentemporary">
+                <h5>Temporary</h5>
+                <div class="dots center" data-min="0" data-max="10"></div>
+            </div>
+            <h3>Willpower</h3>
+            <div class="row" data-field="willpower">
+                <div class="dots center" data-min="1" data-max="10"></div>
+            </div>
+            <div class="row" data-field="willpowertemporary">
+                <div class="dots center" data-min="1" data-max="10" data-type="block"></div>
+            </div>
+        </div>
+        <div class="cs-block health-block">
+            <h3>Health</h3>
+            <div class="row">
+                <label>Bruised</label>
+                <span class="healthpenalty"></span>
+                <div class="healthbox"></div>
+            </div>
+            <div class="row">
+                <label>Hurt</label>
+                <span class="healthpenalty">-1</span>
+                <div class="healthbox"></div>
+            </div>
+            <div class="row">
+                <label>Injured</label>
+                <span class="healthpenalty">-1</span>
+                <div class="healthbox"></div>
+            </div>
+            <div class="row">
+                <label>Wounded</label>
+                <span class="healthpenalty">-2</span>
+                <div class="healthbox"></div>
+            </div>
+            <div class="row">
+                <label>Mauled</label>
+                <span class="healthpenalty">-2</span>
+                <div class="healthbox"></div>
+            </div>
+            <div class="row">
+                <label>Crippled</label>
+                <span class="healthpenalty">-5</span>
+                <div class="healthbox"></div>
+            </div>
+            <div class="row">
+                <label>Incapacitated</label>
+                <span class="healthpenalty"></span>
+                <div class="healthbox"></div>
+            </div>
+        </div>
+    </div>
+
     <div style="clear: both;"></div>
 </div>
 
 <script type='text/javascript'>character.buildCharacterSheet();</script>
+

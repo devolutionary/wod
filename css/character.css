@@ -2,9 +2,11 @@
     font-size: 10pt;
     width: 1200px;
     background: #111;
+    padding-bottom: 128px;
+    margin-bottom: 128px;
 }
 
-#charactersheet h3, #charactersheet h2, #charactersheet h4 {
+#charactersheet h3, #charactersheet h2 {
     text-align: center;
 }
 
@@ -12,10 +14,35 @@
     margin: 3px 0;
 }
 
+#charactersheet h4 {
+    padding-left: 12px;
+    margin: 6px 36px 3px 6px;
+    padding-bottom: 3px;
+    background: #333;
+}
+
 #charactersheet h2 {
+    color: #c8c;
+    text-shadow: 0 0 2px #d0d;
     padding: 24px 0 6px;
     margin: 12px;
     border-bottom: 1px solid #666;
+}
+
+#charactersheet h3 {
+    color: #aaa;
+}
+
+#charactersheet h3.third {
+    width: 350px;
+    margin: 6px 50px 6px 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#charactersheet h5 {
+    margin: 2px 0;
+    text-align: center;
 }
 
 #charactersheet label {
@@ -33,6 +60,7 @@
     background: none;
     border: #666 solid;
     border-width: 0 0 1px 0;
+    vertical-align: top;
 }
 
 #charactersheet select option {
@@ -77,5 +105,47 @@
     width: 100px;
     font-style: italic;
     margin-right: 12px;
-    vertical-align: top;
+    vertical-align: bottom;
+}
+
+#charactersheet .dots img {
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
+
+#charactersheet input.secondaryability {
+    width: 112px;
+    margin-right: 12px;
+    font-size: 9pt;
+}
+
+#charactersheet select.lore, #charactersheet select.background {
+    width: 228px;
+    margin-right: 12px;
+}
+
+#charactersheet .virtue-block label {
+    width: 238px;
+}
+
+#charactersheet input.apocalypticability {
+    font-size: 9pt;
+    width: 310px;
+    margin-right: 9px;
+}
+
+#charactersheet input.apocalypticcost {
+    width: 20px;
+    font-size: 9pt;
+    text-align: center;
+    border-width: 1px;
+}
+
+#charactersheet div.dots.center {
+    text-align: center;
+    display: block;
+}
+
+#charactersheet div.dots.center img {
+    margin-right: 3px;
 }
