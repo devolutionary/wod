@@ -1,0 +1,81 @@
+#charactersheet {
+    font-size: 10pt;
+    width: 1200px;
+    background: #111;
+}
+
+#charactersheet h3, #charactersheet h2, #charactersheet h4 {
+    text-align: center;
+}
+
+#charactersheet h3, #charactersheet h4 {
+    margin: 3px 0;
+}
+
+#charactersheet h2 {
+    padding: 24px 0 6px;
+    margin: 12px;
+    border-bottom: 1px solid #666;
+}
+
+#charactersheet label {
+    display: inline-block;
+    width: 120px;
+    background: none;
+    vertical-align: top;
+}
+
+#charactersheet div.dots {
+    display: inline-block;
+}
+
+#charactersheet input, #charactersheet select {
+    background: none;
+    border: #666 solid;
+    border-width: 0 0 1px 0;
+}
+
+#charactersheet select option {
+    background: #999;
+    border: none;
+    color: black;
+}
+
+#charactersheet .cs-block.half input, #charactersheet .cs-block.half select {
+    width: 300px;
+}
+
+#charactersheet .cs-block input.short {
+    width: 60px;
+}
+
+#charactersheet textarea {
+    width: 70%;
+    resize: vertical;
+    height: 40px;
+    border: 1px solid #666;
+    font-size: 10pt;
+    padding: 2px;
+    background: none;
+}
+
+#charactersheet div.row {
+    margin: 2px 0;
+    padding: 2px 12px;
+}
+
+#charactersheet div.row:hover {
+    background: rgba(100,100,100,0.1);
+}
+
+#charactersheet .cs-section { clear: both; }
+#charactersheet .cs-block { display: block; float: left; width: 400px; }
+#charactersheet .cs-block.half { width: 600px; }
+
+#charactersheet input.specialisation {
+    font-size: 9pt;
+    width: 100px;
+    font-style: italic;
+    margin-right: 12px;
+    vertical-align: top;
+}
