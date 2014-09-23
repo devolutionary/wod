@@ -2,7 +2,7 @@
     font-size: 10pt;
     width: 1200px;
     background: #111;
-    padding-bottom: 128px;
+    padding-bottom: 48px;
     margin-bottom: 128px;
 }
 
@@ -180,4 +180,35 @@
     height: 140px;
     margin: 0 auto 12px;
     width: 90%;
+}
+
+#charactersheet .meritflaw-block .meritflaw {
+    width: 320px;
+    margin-right: 12px;
+    font-size: 9pt;
+}
+
+#charactersheet .meritflaw-block .meritflawcost {
+    width: 36px;
+    font-size: 9pt;
+    text-align: center;
+}
+
+#charactersheetsubmit {
+    padding: 6px 24px;
+    font-size: 18pt;
+    font-family: "metamorphous", sans-serif;
+    border: 1px solid #999;
+    border-radius : 2px;
+    background: #111;
+    margin: 24px auto;
+    display: block;
+    cursor: pointer;
+    font-variant: small-caps;
+}
+
+#charactersheetsubmit:hover {
+    color: #111;
+    background: #999;
+    border-color: purple;
 }

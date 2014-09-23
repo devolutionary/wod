@@ -12,7 +12,7 @@
             </div>
             <div class="row">
                 <label for="charactersex">Sex</label>
-                <select id="charactersex" name="charactersex">
+                <select id="charactersex" name="charactersex" style="width: 90px;">
                     <option>&nbsp;</option>
                     <option value="female">Female</option>
                     <option value="male">Male</option>
@@ -176,7 +176,7 @@
 
     <div class="cs-section">
         <h2>Abilities</h2>
-        <div class="cs-block ability-block">
+        <div class="cs-block ability-block" data-group="talents">
             <h3>Talents</h3>
             <div class="row" data-field="alertness">
                 <label>Alertness</label>
@@ -240,7 +240,7 @@
             </div>
         </div>
 
-        <div class="cs-block ability-block">
+        <div class="cs-block ability-block" data-group="skills">
             <h3>Skills</h3>
             <div class="row" data-field="animalken">
                 <label>Animal Ken</label>
@@ -304,7 +304,7 @@
             </div>
         </div>
 
-        <div class="cs-block ability-block">
+        <div class="cs-block ability-block" data-group="knowledges">
             <h3>Knowledges</h3>
             <div class="row" data-field="academics">
                 <label>Academics</label>
@@ -522,8 +522,11 @@
             <textarea class="largetext" name="additionalinfopersonalnotes" id="additionalinfopersonalnotes"></textarea>
         </div>
     </div>
+    <div style="clear: both; height: 24px;"></div>
 
-    <div style="clear: both;"></div>
+    <div style="padding: 24px 0; background: #222; margin-top: 48px;">
+        <button id="charactersheetsubmit">Save Character</button>
+    </div>
 </div>
 
 <script type='text/javascript'>character.buildCharacterSheet();</script>

@@ -47,8 +47,24 @@ var character = {
         });
         character.setBackgrounds();
         character.setLores();
-        character.setDots();
         character.setHealthBoxes();
+        character.setMeritFlaws();
+        character.setDots();
+
+        $('#charactersheetsubmit').click(function() {
+            character.submitCharacterSheet();
+        });
+    },
+    setMeritFlaws: function() {
+        var block = $('.meritflaw-block');
+        block.append('<div class="row"><input class="meritflaw" /><input class="meritflawcost" maxlength="3" /></div>');
+
+        var meritflaw = block.find('.meritflaw').last();
+
+        meritflaw.blur(function() {
+            block.find('.meritflaw').filter(function() { return $(this).val().trim() == ""; }).parent().remove();
+            character.setMeritFlaws();
+        });
     },
     setHealthBoxes: function() {
         var health = $('.health-block');
@@ -109,12 +125,13 @@ var character = {
     },
     setDots: function() {
         jQuery.each($('#charactersheet').find('.dots'), function() {
-            if (typeof $(this).data('current') == "undefined")
-                $(this).data('current', $(this).data('min'));
             character.bindDots($(this));
         });
     },
     bindDots: function(obj) {
+        if (typeof obj.data('current') == "undefined")
+            obj.data('current', obj.data('min'));
+
         var min = parseInt(obj.data('min')),
             max = parseInt(obj.data('max')),
             current = parseInt(obj.data('current'));
@@ -147,5 +164,63 @@ var character = {
                 obj.data('current', ind);
             character.bindDots(obj);
         });
+    },
+    submitCharacterSheet: function() {
+        var $sheet = $('#charactersheet'),
+            $sections = $sheet.find('.cs-section'),
+            $characterinfosection = $sections.eq(0),
+            $attributes = $sections.eq(1),
+            $abilities = $sections.eq(2),
+            $advantages = $sections.eq(3),
+            $traits = $sections.eq(4),
+            $additionalinfo = $sections.eq(5);
+
+        var charactermodel = {
+            characterinformation: {},
+            attributes: {},
+            abilities: {
+                talents: {},
+                skills: {},
+                knowledges: {}
+            },
+            backgrounds: {},
+            lores: {},
+            virtues: {},
+            apocalypticform: {
+                low: {},
+                high: {}
+            },
+            faith: {},
+            torment: {},
+            willpower: {},
+            health: {},
+            meritsflaws: {},
+            additionalinformation: {}
+        };
+
+        $.each($characterinfosection.find('input,select,textarea'), function() {
+            charactermodel.characterinformation[$(this).prop('name')] = $(this).val();
+        });
+
+        $.each($attributes.find('div.row'), function() {
+            var dots = $(this).find('div.dots'),
+                current = dots.data('current'),
+                field = $(this).data('field'),
+                specialisation = $(this).find('.specialisation').val();
+            charactermodel.attributes[field] = {name: field, specialisation: specialisation, value: current };
+        });
+
+        $.each($abilities.find('div.row'), function() {
+            var group = $(this).parent().data('group'),
+                dots = $(this).find('div.dots'),
+                current = dots.data('current'),
+                specialisation = $(this).find('.specialisation').val().trim(),
+                field = ($(this).data('field')? $(this).data('field'): $(this).find('input.secondaryability').val().trim()),
+                id = ($(this).find('input.secondaryability').length == 1? $(this).find('input.secondaryability').val().trim() + (specialisation != ""? "-"+specialisation:""): $(this).data('field'));
+            if (field.trim() != "")
+                charactermodel.abilities[group][id.toLowerCase()] = {name: field, specialisation: specialisation, value: current };
+        });
+
+        console.log(charactermodel);
     }
 };
