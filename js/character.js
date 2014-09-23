@@ -48,6 +48,20 @@ var character = {
         character.setBackgrounds();
         character.setLores();
         character.setDots();
+        character.setHealthBoxes();
+    },
+    setHealthBoxes: function() {
+        var health = $('.health-block');
+
+        health.find('div.healthbox').click(function() {
+            if ($(this).html() == "/")
+                $(this).html('X');
+            else if ($(this).html() == "X")
+                $(this).html('');
+            else
+                $(this).html('/');
+            $(this).blur();
+        });
     },
     setSecondaryAbilities: function(obj) {
         obj.append('<div class="row"><input class="secondaryability" /><input class="specialisation" /><div class="dots" data-min="0" data-max="5"></div></div></div>');
@@ -109,15 +123,16 @@ var character = {
         var filled = "images/dot-filled.png",
             empty = "images/dot-empty.png";
 
-        if (typeof $(this).data('type') != "undefined" && $(this).data('type') == "block") {
-
+        if (obj.data('type') == "block") {
+            filled = "images/box-filled.png";
+            empty = "images/box-empty.png";
         }
 
         for (var i = 0; i < max; i++) {
             if (i < current)
-                obj.append('<img src="images/dot-filled.png" />');
+                obj.append('<img src="' + filled + '" />');
             else
-                obj.append('<img src="images/dot-empty.png" />');
+                obj.append('<img src="' + empty + '" />');
         }
 
         var dots = obj.find('img');

@@ -149,3 +149,35 @@
 #charactersheet div.dots.center img {
     margin-right: 3px;
 }
+
+#charactersheet .healthpenalty {
+    display: inline-block;
+    width: 20px;
+    margin-right: 40px;
+}
+
+#charactersheet div.healthbox {
+    border: 1px solid #999;
+    cursor: pointer;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 16pt;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+    text-align: center;
+    width: 16px;
+}
+
+#charactersheet .health-block div.row {
+    width: 260px;
+    margin: 0 auto;
+}
+
+
+#charactersheet textarea.largetext {
+    display: block;
+    height: 140px;
+    margin: 0 auto 12px;
+    width: 90%;
+}
