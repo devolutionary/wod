@@ -11,3 +11,8 @@ h1, h2, h3, h4 {
     font-weight: normal;
     font-variant: small-caps;
 }
+
+input {
+    background: none;
+    border: 1px solid #666;
+}

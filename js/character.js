@@ -113,7 +113,7 @@ var character = {
         var select = block.find('select').last();
 
         jQuery.each(lores, function(i,l) {
-            select.append('<option value="' + l.toLowerCase().replace(' ', '') + '">' + l + '</option>');
+            select.append('<option value="' + l.toLowerCase().replace(/ /g, '') + '">' + l + '</option>');
         });
 
         character.bindDots(select.parent().find('div.dots'));
@@ -173,7 +173,13 @@ var character = {
             $abilities = $sections.eq(2),
             $advantages = $sections.eq(3),
             $traits = $sections.eq(4),
-            $additionalinfo = $sections.eq(5);
+            $additionalinfo = $sections.eq(5),
+            $backgrounds = $advantages.find('.cs-block.background-block'),
+            $lores = $advantages.find('.cs-block.lore-block'),
+            $virtues = $advantages.find('.cs-block.virtue-block'),
+            $faith = $traits.find('.cs-block').eq(1),
+            $health = $traits.find('.cs-block.health-block'),
+            $meritsflaws = $additionalinfo.find('.cs-block.meritflaw-block');
 
         var charactermodel = {
             characterinformation: {},
@@ -186,31 +192,29 @@ var character = {
             backgrounds: {},
             lores: {},
             virtues: {},
-            apocalypticform: {
-                low: {},
-                high: {}
-            },
+            apocalypticform: {},
             faith: {},
             torment: {},
             willpower: {},
             health: {},
             meritsflaws: {},
-            additionalinformation: {}
+            additionalinformation: {},
+            experience: {}
         };
 
-        $.each($characterinfosection.find('input,select,textarea'), function() {
+        jQuery.each($characterinfosection.find('input,select,textarea'), function() {
             charactermodel.characterinformation[$(this).prop('name')] = $(this).val();
         });
 
-        $.each($attributes.find('div.row'), function() {
+        jQuery.each($attributes.find('div.row'), function() {
             var dots = $(this).find('div.dots'),
                 current = dots.data('current'),
                 field = $(this).data('field'),
                 specialisation = $(this).find('.specialisation').val();
-            charactermodel.attributes[field] = {name: field, specialisation: specialisation, value: current };
+            charactermodel.attributes[field] = {name: field, specialisation: specialisation, level: current };
         });
 
-        $.each($abilities.find('div.row'), function() {
+        jQuery.each($abilities.find('div.row'), function() {
             var group = $(this).parent().data('group'),
                 dots = $(this).find('div.dots'),
                 current = dots.data('current'),
@@ -218,9 +222,75 @@ var character = {
                 field = ($(this).data('field')? $(this).data('field'): $(this).find('input.secondaryability').val().trim()),
                 id = ($(this).find('input.secondaryability').length == 1? $(this).find('input.secondaryability').val().trim() + (specialisation != ""? "-"+specialisation:""): $(this).data('field'));
             if (field.trim() != "")
-                charactermodel.abilities[group][id.toLowerCase()] = {name: field, specialisation: specialisation, value: current };
+                charactermodel.abilities[group][id.toLowerCase()] = {name: field, specialisation: specialisation, level: current };
         });
 
-        console.log(charactermodel);
+        jQuery.each($backgrounds.find('div.row'), function(i, b) {
+            var name = $(b).find('select').val(),
+                dots = $(b).find('div.dots').data('current');
+            if (name.trim() != "")
+                charactermodel.backgrounds[i] = { name: name, level: dots };
+        });
+
+        jQuery.each($lores.find('div.row'), function() {
+            var name = $(this).find('select').val(),
+                dots = $(this).find('div.dots').data('current');
+            if (name.trim() != "")
+                charactermodel.lores[name] = dots;
+        });
+
+        charactermodel.virtues = {
+            conscience: $virtues.find('div.dots').eq(0).data('current'),
+            conviction: $virtues.find('div.dots').eq(1).data('current'),
+            courage: $virtues.find('div.dots').eq(2).data('current')
+        };
+
+        jQuery.each($traits.find('.cs-block').eq(0).find('div.row'), function(i,t) {
+            charactermodel.apocalypticform[i] = {
+                trait: $(t).find('input.apocalypticability').val().trim(),
+                cost: $(t).find('input.apocalypticcost').val().trim()
+            };
+        });
+
+        charactermodel.faith = {
+            permanent: $faith.find('div.dots').eq(0).data('current'),
+            temporary: $faith.find('div.dots').eq(1).data('current')
+        };
+
+        charactermodel.torment = {
+            permanent: $faith.find('div.dots').eq(2).data('current'),
+            temporary: $faith.find('div.dots').eq(3).data('current')
+        };
+
+        charactermodel.willpower = {
+            permanent: $faith.find('div.dots').eq(4).data('current'),
+            temporary: $faith.find('div.dots').eq(5).data('current')
+        };
+
+        jQuery.each($health.find('div.row'), function(i, h) {
+            var input = $(h).find('div.healthbox').text();
+            charactermodel.health[i] = (input == "X"?"A":(input == "/"?"L":"N"));
+        });
+
+        jQuery.each($meritsflaws.find('div.row'), function(i, m) {
+            var name = $(m).find('input').eq(0).val().trim(),
+                cost = $(m).find('input').eq(1).val().trim();
+
+            if (name != "" && cost != "")
+                charactermodel.meritsflaws[i] = { name: name, cost: cost };
+        });
+
+        jQuery.each($additionalinfo.find('textarea'), function() {
+            charactermodel.additionalinformation[$(this).prop('name')] = $(this).val().trim();
+        });
+
+        charactermodel.experience = $('#experience').val().trim();
+
+        jQuery.ajax({
+            url: ajaxPath + "character.save.php",
+            data: charactermodel,
+            type: "post",
+            dataType: 'json'
+        });
     }
 };

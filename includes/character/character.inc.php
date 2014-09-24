@@ -496,6 +496,8 @@
                 <span class="healthpenalty"></span>
                 <div class="healthbox"></div>
             </div>
+            <h3>Experience</h3>
+            <input name="experience" id="experience" />
         </div>
     </div>
     <div class="cs-section">
@@ -504,20 +506,22 @@
             <h3>Merits & Flaws</h3>
         </div>
         <div class="cs-block">
-            <h3>Background Information</h3>
-            <textarea class="largetext" name="additionalinfobackgrounds" id="additionalinfobackgrounds"></textarea>
             <h3>Pacts & Followers</h3>
             <textarea class="largetext" name="additionalinfopacts" id="additionalinfopacts"></textarea>
             <h3>Apocalyptic Form</h3>
             <textarea class="largetext" name="additionalinfoapocalypticform" id="additionalinfoapocalypticform"></textarea>
             <h3>Rituals</h3>
             <textarea class="largetext" name="additionalinforituals" id="additionalinforituals"></textarea>
-        </div>
-        <div class="cs-block">
-            <h3>Equipment</h3>
-            <textarea class="largetext" name="additionalinfoequipment" id="additionalinfoequipment"></textarea>
             <h3>Relics</h3>
             <textarea class="largetext" name="additionalinforelics" id="additionalinforelics"></textarea>
+        </div>
+        <div class="cs-block">
+            <h3>Background Information</h3>
+            <textarea class="largetext" name="additionalinfobackgrounds" id="additionalinfobackgrounds"></textarea>
+            <h3>Expanded Merits and Flaws</h3>
+            <textarea class="largetext" name="additionalinfomeritsflaws" id="additionalinfomeritsflaws"></textarea>
+            <h3>Equipment</h3>
+            <textarea class="largetext" name="additionalinfoequipment" id="additionalinfoequipment"></textarea>
             <h3>Personal Notes</h3>
             <textarea class="largetext" name="additionalinfopersonalnotes" id="additionalinfopersonalnotes"></textarea>
         </div>

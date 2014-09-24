@@ -3,11 +3,14 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-define('__INC__', 'includes/');
-define('__USER__', 'user/');
-define('__CLASSES__', 'classes/');
+$_ROOT = preg_match("/ajax/", $_SERVER['PHP_SELF'])? "../": "./";
 
-foreach (glob(__CLASSES__.'*.class.php') as $file)
+define('__INC__', $_ROOT.'includes/');
+define('__USER__', $_ROOT.'user/');
+define('__CLASSES__', $_ROOT.'classes/');
+
+foreach (glob(__CLASSES__.'*.php') as $file) {
     include $file;
+}
 
 Session::start();

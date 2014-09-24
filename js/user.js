@@ -1,12 +1,8 @@
 var user = {
     registerUser: function(username, password) {
-        var _seed = generateRandomString(32),
-            _hash = jQuery.sha256(password + _seed),
-            _enc = _hash + ":" + _seed;
-
         jQuery.ajax({
             url: ajaxPath + 'user.register.php',
-            data: {username: username, password: _enc},
+            data: {username: username, password: password},
             type: 'post',
             dataType: 'json',
             success: function(data) {

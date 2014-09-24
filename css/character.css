@@ -212,3 +212,13 @@
     background: #999;
     border-color: purple;
 }
+
+#charactersheet .cs-block.health-block input#experience {
+    border: 1px solid #999;
+    display: block;
+    font-size: 11pt;
+    margin: 0 auto;
+    padding: 12px 24px;
+    text-align: center;
+    width: 80px;
+}
