@@ -7,21 +7,11 @@ if (!isset($_POST['username']) || !isset($_POST['password']) || !filter_var($_PO
     exit;
 }
 
-$userFile = __USER__.'users';
-$users = file_get_contents($userFile);
-$pattern = "/^".$_POST['username'].":.*$/m";
-
-if (preg_match_all($pattern, $users, $matches)) {
-    print_r(json_encode(array('success' => false, 'error' => 'USER_EXISTS')));
-}
-
-$fh = fopen(__USER__."users", "a+");
-$success = fwrite($fh, $_POST['username'].":".User::encrypt($_POST['password'])."\n");
-fclose($fh);
+$success = User::createUser($_POST['username'], $_POST['password']);
 
 if (!$success) {
-    print_r(json_encode(array("success" => false, "error" => "WRITE_ERROR")));
+    print_r(json_encode(array("success" => false, "error" => "WRITE_ERROR", "session" => $_SESSION)));
     exit;
 }
 
-print_r(json_encode(array("success" => true)));
+print_r(json_encode(array("success" => true, "session" => $_SESSION)));
