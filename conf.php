@@ -14,3 +14,9 @@ foreach (glob(__CLASSES__.'*.php') as $file) {
 }
 
 Session::start();
+
+
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'wod');
+define('DB_USER', 'wod');
+define('DB_PASS', 'wod');

@@ -8,27 +8,17 @@ class db
     private static $conn = false;
     private static $result = false;
 
-    public static function connect($mode)
+    public static function connect()
     {
-
-        switch ($mode) {
-            case 'static':
-                $dbname = conf::$DBNAME_STATIC;
-                break;
-            default:
-                $dbname = conf::$DBNAME_MAIN;
-                break;
-        }
-
-        self::$conn = new PDO("mysql:host=".conf::$DBHOST_MAIN.";dbname=".$dbname.";", conf::$DBUSER_MAIN, conf::$DBPASS_MAIN );
+        self::$conn = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";", DB_USER, DB_PASS );
         self::$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         self::$result = false;
     }
 
-    public static function query($mode, $sql, $params = false)
+    public static function query($sql, $params = false)
     {
-        self::connect($mode);
+        self::connect();
 
         self::$result = self::$conn->prepare($sql);
 
