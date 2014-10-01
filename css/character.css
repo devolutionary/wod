@@ -56,13 +56,6 @@
     display: inline-block;
 }
 
-#charactersheet input, #charactersheet select {
-    background: none;
-    border: #666 solid;
-    border-width: 0 0 1px 0;
-    vertical-align: top;
-}
-
 #charactersheet select option {
     background: #999;
     border: none;
