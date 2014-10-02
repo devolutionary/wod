@@ -1,0 +1,7 @@
+#diceroller .select2-container, #diceroller input {
+    margin-right: 36px;
+}
+
+#diceroller input[type="checkbox"] {
+    vertical-align: bottom;
+}
